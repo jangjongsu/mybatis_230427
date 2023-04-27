@@ -10,4 +10,6 @@ public interface IDao {
 	
 	public ArrayList<BoardDto> listDao(); // 게시판 리스트 가져오기
 	
+	public void delete(String mid);
+	
 }

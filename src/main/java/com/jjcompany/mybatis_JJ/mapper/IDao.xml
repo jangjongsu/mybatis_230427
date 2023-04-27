@@ -8,8 +8,11 @@
 	<insert id="writeDao">
 		INSERT INTO MYBOARD(mid, mwriter, mcontent) VALUES (myboard_seq.nextval, #{param1}, #{param2})
 	</insert>
-	<select id="listDao" resultType="com.jjcompany.mybatis_JJ.dto.BoradDto">
-		SELET * FROM myboard OEDER BY mid DESC
+	<select id="listDao" resultType="com.jjcompany.mybatis_JJ.dto.BoardDto">
+		SELECT * FROM myboard ORDER BY mid DESC
 	</select>
+	<delete id="delete">
+		DELETE FROM myboard WHERE mid=#{param1}
+	</delete>
 
 </mapper>

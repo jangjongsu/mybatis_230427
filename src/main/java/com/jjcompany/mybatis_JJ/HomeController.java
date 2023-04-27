@@ -32,7 +32,7 @@ public class HomeController {
 		
 		model.addAttribute("list", dtos);
 		
-		return "redirect:list";
+		return "list";
 	}
 	
 	@RequestMapping(value="/write_form")
@@ -51,6 +51,19 @@ public class HomeController {
 		IDao dao = sqlsession.getMapper(IDao.class);
 		
 		dao.writeDao(mwriter, mcontent);
+		
+		return "redirect:list";
+	}
+	
+	@RequestMapping(value="/delete")
+	public String delete(HttpServletRequest request) {
+		
+			
+		String mid = request.getParameter("mid");
+		
+		IDao dao = sqlsession.getMapper(IDao.class);
+		
+		dao.delete(mid);
 		
 		return "redirect:list";
 	}
