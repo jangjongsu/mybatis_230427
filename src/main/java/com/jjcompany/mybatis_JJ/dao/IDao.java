@@ -10,6 +10,8 @@ public interface IDao {
 	
 	public ArrayList<BoardDto> listDao(); // 게시판 리스트 가져오기
 	
-	public void delete(String mid);
+	public void deleteDao(String mid); //게시글 삭제
+	
+	public int totalCount(); // 총게시글 수 반환
 	
 }

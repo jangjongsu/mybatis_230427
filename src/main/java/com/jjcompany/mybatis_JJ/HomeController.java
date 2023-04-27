@@ -29,8 +29,11 @@ public class HomeController {
 		IDao dao = sqlsession.getMapper(IDao.class);
 		
 		ArrayList<BoardDto> dtos =dao.listDao();
+		int total =dao.totalCount();
+	
 		
 		model.addAttribute("list", dtos);
+		model.addAttribute("total", total);
 		
 		return "list";
 	}
@@ -63,7 +66,7 @@ public class HomeController {
 		
 		IDao dao = sqlsession.getMapper(IDao.class);
 		
-		dao.delete(mid);
+		dao.deleteDao(mid);
 		
 		return "redirect:list";
 	}

@@ -9,6 +9,7 @@
 </head>
 <body>
 	<h1>게시글 목록</h1>
+	<h3>총 게시글수 : ${total }</h3>
 	<hr>
 	<C:forEach items="${list }" var="dto">
 		<h2> 글번호 : ${dto.mid }</h2>
